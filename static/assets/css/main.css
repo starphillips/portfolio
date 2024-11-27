@@ -4072,3 +4072,23 @@ body.is-preload #sidebar nav ul li {
 	line-height: 1.6;
 	color: rgba(255, 255, 255, 0.55);
 }
+
+.error-message {
+	color: #D9534F;
+	background-color: #fff3f3;
+	border: 1px solid #D9534F;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 5px;
+	font-size: 14px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Exclamation mark */
+.error-message i {
+	color: #D9534F;
+	font-size: 16px;
+}
