@@ -1,46 +1,28 @@
 from flask import Flask, render_template, url_for, request, redirect
 
 import csv
+import os
 
 app = Flask(__name__)
 
-# This says anything we run our server, this code will run
-# python3 -m flask run
-# server standard is http://127.0.0.1:5000
-
 
 @app.route('/')
-def my_home():  # this creates default when name isnt given
-    # a second parameter is needed to print the name
+def my_home():
     return render_template("index.html")
 
-# We now are able to use URLs to communicate with the server and ask for specific data for it to receive our server based on what URL parameters we give it or end points
-
-
-# @app.route('/generic.html')
-# def generic():
-#     return render_template('generic.html')
-
-
-# @app.route('/elements.html')
-# def elements():
-#     return render_template('elements.html')
 
 @app.route('/<string:page_name>')
 def html_page(page_name):
     return render_template(page_name)
 
 
-# def write_to_file(data):
-#     with open('database.txt', mode='a') as database:
-#         name = data["name"]
-#         email = data["email"]
-#         message = data["message"]
-#         file = database.write(f'\n{name}, {email}, {message}')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONTACTS_FILE = os.path.join(BASE_DIR, "database.csv")
+print("Using database file at:", CONTACTS_FILE)
 
 
 def write_to_csv(data):
-    with open('database.csv', mode='a') as database2:
+    with open(CONTACTS_FILE, mode='a') as database2:
         name = data["name"]
         email = data["email"]
         message = data["message"]
