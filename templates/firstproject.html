@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -97,4 +98,105 @@
 
 </body>
 
+=======
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Starkie Phillips Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./static/assets/css/main.css" />
+    <link href="./static/python.ico" rel="icon">
+    <noscript>
+        <link rel="stylesheet" href="./static/assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="/" class="title">Starkie Phillips</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="experiences.html">Experience</a></li>
+                <li><a href="firstproject.html" class="active">Hacker News Stories</a></li>
+                <li><a href="secondproject.html">WhereTo.io</a></li>
+                <li><a href="thirdproject.html">This Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Hacker News Top Stories Scraper</h1>
+
+                <p>My first individual project. </p>
+
+                <p>This is a Python script that scrapes top stories from the first and second page of Hacker News,
+                    and filters the results based on the number of votes. Only stories with 100 or more votes are
+                    included in the output and are sorted by the number of votes received.</p>
+
+                <p><u>Python Libraries:</u></p>
+
+                <p> I used the get function in the requests module to grab the first two pages of Hacker News.
+                    This is done live to when the user runs the code, and so the stories will constantly update
+                    based on what is currently on the website. Res.text is then used to retrieve the HTML string
+                    of the webpage. </p>
+
+                <p>The Python library, Beautiful Soup, is used to parse the HTML string. Specifically, Beautiful Soup
+                    is used to access the body tag and extract specific data from here (story titles, links, and
+                    vote counts). This makes it easier to manipulate as I work with only the relevant information
+                    I need to reach the objective of this project.
+                </p>
+
+                <p>Finally, pprint is used to tidy up the output in a more presentable way for the reader to identify
+                    the story, the votes and click on the link directly to the story.</p>
+
+                <p> Please click on the icon to find out more about this project on GitHub and its usage.
+                <ul class="icons">
+                    <li><a href="https://github.com/starphillips/hacker-news-scrape" class="icon brands fa-github"
+                            target="_blank"><span class="label">GitHub</span></a>
+                    </li>
+                </ul>
+                </p>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./static/assets/js/jquery.min.js"></script>
+    <script src="./static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="./static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="./static/assets/js/browser.min.js"></script>
+    <script src="./static/assets/js/breakpoints.min.js"></script>
+    <script src="./static/assets/js/util.js"></script>
+    <script src="./static/assets/js/main.js"></script>
+
+</body>
+
+>>>>>>> 0493dcb22c0a3da2e1a5c06bcf03fc05ca4a17f5
 </html>

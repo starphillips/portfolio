@@ -16,11 +16,14 @@ def html_page(page_name):
     return render_template(page_name)
 
 
+<<<<<<< HEAD
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONTACTS_FILE = os.path.join(BASE_DIR, "database.csv")
 print("Using database file at:", CONTACTS_FILE)
 
 
+=======
+>>>>>>> 0493dcb22c0a3da2e1a5c06bcf03fc05ca4a17f5
 def write_to_csv(data):
     with open(CONTACTS_FILE, mode='a') as database2:
         name = data["name"]
