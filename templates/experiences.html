@@ -25,10 +25,10 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="experiences.html" class="active">Experience</a></li>
-                <li><a href="firstproject.html">Hacker News Stories</a></li>
-                <li><a href="secondproject.html">WhereTo.io</a></li>
-                <li><a href="thirdproject.html">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='experience') }}" class="active">Experience</a></li>
+                <li><a href="{{ url_for('html_page', page_name='firstproject') }}">Hacker News Stories</a></li>
+                <li><a href="{{ url_for('html_page', page_name='secondproject') }}">WhereTo.io</a></li>
+                <li><a href="{{ url_for('html_page', page_name='thirdproject') }}">This Portfolio</a></li>
             </ul>
         </nav>
     </header>
@@ -42,23 +42,34 @@
             <div class="inner">
                 <h1 class="major">Work Experiences and Education</h1>
 
-
-
                 <section id="experience">
                     <div class="job">
-
                         <h2> Work Experiences </h2>
 
-                        <h3>OpusApeiro <span>Screening Administrator</span> <em>2nd Sep 2024 – Present</em></h3>
+                        <h3>Callen-Lenz <span>Year In Industry</span> <em>4th Aug 2025 – 31st July 2026</em></h3>
+                        <ul>
+                            <li>Worked in agile team projects, adapting to evolving requirements and sprint deadlines, 
+                                as well as delivering independent projects to build on my technical judgement.</li>
+                            <li>Supported the coordination of internal projects from research to initiation 
+                                phases, presenting findings and progress to sector-wide and Senior Leadership audiences.</li>
+                            <li>Liaised with colleagues across different areas of the company and external stakeholders, 
+                                coordinating activities to support project delivery.</li>
+                            <li>Managed multiple tasks effectively, prioritising workload independently and taking 
+                                initiative when required.</li>
+                        </ul>
+                    </div>
+                    <div class="job">
+
+                        <h3>OpusApeiro <span>Screening Administrator</span> <em>2nd Sep 2024 – 6th June 2025</em></h3>
                         <ul>
                             <li>Utilised C247 software and Microsoft Office apps to manage high-volume screening
                                 processes, ensuring accuracy and compliance with BS7858:2019 standards.</li>
-                            <li>Generated and interpreted KPI reports via PI dashboards and Trello, contributing to
-                                performance improvements and enhanced team productivity.</li>
+                            <li>Maintained consistent communication with candidates and provided clients with weekly 
+                                reports to meet SLAs.</li>
                             <li>Verified candidate documentation and maintained consistent communication with clients
                                 and their staff to meet SLAs.</li>
-                            <li>Gained foundational knowledge of software development processes, building skills to
-                                support a transition into a tech-focused role.</li>
+                            <li>Gained foundational knowledge of software development processes, in my final three 
+                                months as a Tester, building skills to support a transition into a tech-focused role. </li>
                         </ul>
                     </div>
 
@@ -106,7 +117,7 @@
                         <ul>
                             <li>This course is accredited by <a href="https://techskills.org/"
                                     target="_blank">TechSkills</a>.</li>
-                            <li>Achieved a Distinction (1st) for my first year of study.</li>
+                            <li>Achieved a Distinction (1st) for my first year and second of study.</li>
                             <li>Related Modules: Object-Orientated Systems Development, Design and Analysis of Data
                                 Structures and Algorithms, Data, Schemas and Applications,
                                 Information Systems Development and Foundations of Computing</li>
@@ -146,10 +157,10 @@
 
                     <div class="job">
                         <ul>
+                            <li>Full UK Driving Licence</li>
                             <li>Zero to Mastery: The Complete Python Developer (September 2024)</li>
                             <li>BTEC L1/L2 Award in Information and Creative Technology (July 2019) - With a Merit</li>
-                            <li>NCFE Level 2 Certificate in Business and Enterprise (July 2019) - With a Distinction
-                            </li>
+                            <li>NCFE Level 2 Certificate in Business and Enterprise (July 2019) - With a Distinction</li>
                         </ul>
                     </div>
 
@@ -173,6 +184,7 @@
                     <ul class="menu">
                         <li>&copy; Untitled. All rights reserved.</li>
                         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li><a href="{{ url_for('html_page', page_name='privacy') }}">Privacy Policy </a></li>
                     </ul>
                 </div>
             </footer>
