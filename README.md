@@ -1,6 +1,6 @@
 # Starkie Phillips Portfolio
 
-My portfolio has been deployed using pythonanywhere.com and can be found under the URL starkiephillips.pythonanywhere.com
+My portfolio has been deployed using pythonanywhere.com and can be found under the URL www.starkiephillips.pythonanywhere.com
 
 I will continue to develop this as I improve on my skills and have further exciting projects to show!
 

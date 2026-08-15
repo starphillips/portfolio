@@ -40,7 +40,8 @@
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
 			<div class="inner">
 				<h1>Starkie Phillips Portfolio</h1>
-				<p>A portfolio to showcase my work. </p>
+				<h3>Software Engineering Student</h3>
+				<p>Exploring software development through university projects,<br>professional experience, and independent projects.</p>
 				<ul class="actions">
 					<li><a href="#one" class="button scrolly">Learn more</a></li>
 				</ul>
@@ -49,7 +50,56 @@
 
 		<!-- One -->
 		<section id="one" class="wrapper style2 spotlights">
+			<!-- <section>
+				<a href="#" class="image"><img src="./static/images/map.jpg" alt="" data-position="top center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>WhereTo.io</h2>
+						<p>A first year project, using the database from Bristol Open Data to generate an app that
+							allows people in Bristol to locate and access support services local to them.</p>
+						<ul class="actions">
+                			<li><a href="{{ url_for('html_page', page_name='secondproject') }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section> -->
 			<section>
+				<a href="#" class="image"><img src="./static/images/me.jpg" alt="" data-position="25% 25%" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>This Portfolio</h2>
+						<p>An overview of how I developed this portfolio, the technologies used, <br>and how my web development skills have progressed since.</p>
+						<ul class="actions">
+                			<li><a href="{{ url_for('html_page', page_name='thirdproject') }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+				<section>
+				<a href="#" class="image"><img src="./static/images/map.jpg" alt="" data-position="25% 25%" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>WhereTo2</h2>
+						<p>An event platform for Maastricht, where I led the software development <br>and built the website and features supporting the wider business idea.</p>
+						<ul class="actions">
+                			<li><a href="{{ url_for('html_page', page_name='whereto') }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a href="#" class="image"><img src="./static/images/hn.jpg" alt="" data-position="25% 25%" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Placement Experience</h2>
+						<p>A closer look at the software development and project management <br>experience I gained during my year in industry.</p>
+						<ul class="actions">
+                			<li><a href="{{ url_for('html_page', page_name='placement') }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- <section>
 				<a href="#" class="image"><img src="./static/images/hn.jpg" alt="" data-position="center center" /></a>
 				<div class="content">
 					<div class="inner">
@@ -62,47 +112,40 @@
 						</ul>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<section>
-				<a href="#" class="image"><img src="./static/images/map.jpg" alt="" data-position="top center" /></a>
 				<div class="content">
 					<div class="inner">
-						<h2>WhereTo.io</h2>
-						<p>A first year project, using the database from Bristol Open Data to generate an app that
-							allows people in Bristol to locate and access support services local to them.</p>
-						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='secondproject') }}" class="button">Learn more</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="#" class="image"><img src="./static/images/me.jpg" alt="" data-position="25% 25%" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>This Portfolio</h2>
-						<p>My first ever project using Python to run the backend and deploy.</p>
-						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='thirdproject') }}" class="button">Learn more</a></li>
-						</ul>
+						<h2>Additional projects</h2>
+							<ul class="actions">
+								<li><a href="{{ url_for('html_page', page_name='firstproject') }}" class="button">Hacker News Top Stories</a></li>
+								<li><a href="{{ url_for('html_page', page_name='secondproject') }}" class="button">WhereTo.io</a></li>
+								<li><a href="{{ url_for('html_page', page_name='mlbooks') }}" class="button">MLBookkeepers</a></li>
+							</ul>
 					</div>
 				</div>
 			</section>
 		</section>
+		
+		
 
 		<!-- Two -->
 		<section id="two" class="wrapper style3 fade-up">
 			<div class="inner">
 				<h2>About Me</h2>
 
+				<p>Thank you for taking the time to explore my portfolio!</p>
+
 				<p>I'm a current final year undergraduate student at the University of the West of England, pursuing a BSc in
 					Software Engineering for Business. My enthusiasm for software development has driven me to apply the
 					theory and technical knowledge I've gained in the classroom to individual projects.</p>
 
-				<p>Thank you for taking the time to explore my portfolio!</p>
-
 				<p>Here below are the skills that I would like to highlight. Please click on experiences to learn more
-					about my work experiences and education.</p>
+					about my work and education history.</p>
+
+				<ul class="actions">
+                	<li><a href="{{ url_for('html_page', page_name='experiences') }}" class="button">Experiences</a></li>
+				</ul>
 
 				<div class="features">
 
@@ -133,9 +176,7 @@
 					</section>
 
 				</div>
-				<ul class="actions">
-                	<li><a href="{{ url_for('html_page', page_name='experiences') }}" class="button">Experiences</a></li>
-				</ul>
+
 			</div>
 		</section>
 
