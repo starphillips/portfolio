@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Starkie Phillips Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./static/assets/css/main.css" />
+    <link href="./static/python.ico" rel="icon">
+    <noscript>
+        <link rel="stylesheet" href="./static/assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="/" class="title">Starkie Phillips</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('html_page', page_name='experiences') }}">Experience</a></li>
+                <li><a href="{{ url_for('html_page', page_name='portfolio') }}">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto2') }}">Where To?</a></li>
+                <li><a href="{{ url_for('html_page', page_name='backpackersguide') }}" class="active">Backpackers Guide</a></li>
+                <li><a href="{{ url_for('html_page', page_name='hackernews') }}">Hacker News Stories</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto') }}">WhereTo.io</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Backpacker's Guide - South America</h1>
+
+                <p>Backpacker's Guide is an individual project that helps travellers plan a multi-country backpacking trip across South America without needing to build a spreadsheet 
+                    from scratch. Rather than generating a rigid, "perfect" schedule, it gives users a data-driven starting point — a suggested route, duration, and set of destinations 
+                    — based on their own preferences, which they can then adjust to taste.</p>
+
+                <p><b>How it works: </b>Users provide their total trip length, preferred countries, interest tags (e.g. adrenaline, culture, nature), budget level, and travel pace. 
+                    A weighted scoring algorithm then evaluates each candidate destination against those preferences — combining an interest-match score, activity bonuses, 
+                    budget and pace fit, and a distance penalty — to produce a ranked, personalised itinerary. Day allocation is handled through a constraint-based heuristic: 
+                    minimum stay requirements are satisfied first, and any remaining days are distributed toward the highest-scoring destinations.</p>
+
+                <p><b>Status: </b>In active development, version controlled on GitHub. The data modelling, loading and mapping layers are implemented and unit-tested. Next up: the 
+                    scoring algorithm and database connections, followed by UI design and a connected React frontend. The repository is currently private while the project is in development.</p>
+
+                <div class="job">
+                    <h3>Architecture</h3>
+                </div>
+
+                <ul>
+                    <li><b>Backend (Go):</b> A layered pipeline separates raw database models from the enriched structures the algorithm actually reasons about. A dedicated loader 
+                        layer builds lookup maps (tags → destinations, tags → activities, activities → destinations) and transforms flat relational data into algorithm-ready 
+                        structs — keeping the scoring logic decoupled from the database schema.</li>
+                    <li><b>Database (PostgreSQL): </b>A relational schema models countries, destinations, activities, and a flexible tagging system, where destinations and activities 
+                    can each carry multiple tags, allowing many-to-many matching between user interests and locations.</li>
+                    <li><b>Frontend (React, planned): </b>An interactive map and editable itinerary table, where users can adjust day counts, remove destinations, or swap countries, 
+                        with live warnings if their edits exceed their available time.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li><a href="{{ url_for('html_page', page_name='privacy') }}">Privacy Policy </a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./static/assets/js/jquery.min.js"></script>
+    <script src="./static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="./static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="./static/assets/js/browser.min.js"></script>
+    <script src="./static/assets/js/breakpoints.min.js"></script>
+    <script src="./static/assets/js/util.js"></script>
+    <script src="./static/assets/js/main.js"></script>
+
+</body>
+
+</html>

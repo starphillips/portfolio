@@ -15,6 +15,14 @@
     <noscript>
         <link rel="stylesheet" href="./static/assets/css/noscript.css" />
     </noscript>
+
+    <style>
+        .tab-nav {
+            display: flex;
+            gap: 0.75em;
+            margin-bottom: 1.5em;
+        }
+    </style>
 </head>
 
 <body class="is-preload">
@@ -26,9 +34,11 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ url_for('html_page', page_name='experience') }}" class="active">Experience</a></li>
-                <li><a href="{{ url_for('html_page', page_name='firstproject') }}">Hacker News Stories</a></li>
-                <li><a href="{{ url_for('html_page', page_name='secondproject') }}">WhereTo.io</a></li>
-                <li><a href="{{ url_for('html_page', page_name='thirdproject') }}">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='portfolio') }}">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto2') }}">Where To?</a></li>
+                <li><a href="{{ url_for('html_page', page_name='backpackersguide') }}">Backpackers Guide</a></li>
+                <li><a href="{{ url_for('html_page', page_name='hackernews') }}">Hacker News Stories</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto') }}">WhereTo.io</a></li>
             </ul>
         </nav>
     </header>
@@ -42,9 +52,25 @@
             <div class="inner">
                 <h1 class="major">Work Experiences and Education</h1>
 
+                <div class="tab-nav">
+                    <button type="button" class="button small primary tab-btn" data-target="experience" aria-selected="true">Work Experience</button>
+                    <button type="button" class="button small tab-btn" data-target="education" aria-selected="false">Education</button>
+                    <button type="button" class="button small tab-btn" data-target="qualifications" aria-selected="false">Qualifications</button>
+                </div>
+
                 <section id="experience">
+                    <div class="tab-panel" data-panel="experience">
                     <div class="job">
-                        <h2> Work Experiences </h2>
+                        <h3>OpusApeiro <span>Junior Software Developer</span> <em>1st September 2026 – Present</em></h3>
+                        <p>Current role completed part-time alongside my final year at UWE.</p>
+                        <ul>
+                            <li>Writing automated tests for the C247 app.</li>
+                            <li>Building familiarity with the codebase and architecture, with a growing focus on bug fixes.</li>
+                            <li>Using Azure DevOps repositories for version control in an existing codebase.</li>
+                        </ul>
+
+                    </div>
+                    <div class="job">
 
                         <h3>Callen-Lenz <span>Year In Industry</span> <em>4th Aug 2025 – 31st July 2026</em></h3>
                         <ul>
@@ -108,9 +134,9 @@
                         </ul>
 
                     </div>
+                    </div>
 
-                    <h2> Education </h2>
-
+                    <div class="tab-panel" data-panel="education" hidden>
                     <div class="job">
                         <h3>University of the West of England <em>September 2023 – Present</em></h3>
                         <p>BSc (Hons) Software Engineering for Business</p>
@@ -152,9 +178,9 @@
                         <h3>The Laureate Academy <em>September 2014 – August 2019</em></h3>
                         <p>7 GCSEs (6 - 8 Grade) including English and Mathematics</p>
                     </div>
+                    </div>
 
-                    <h2> Qualifications </h2>
-
+                    <div class="tab-panel" data-panel="qualifications" hidden>
                     <div class="job">
                         <ul>
                             <li>Full UK Driving Licence</li>
@@ -163,16 +189,14 @@
                             <li>NCFE Level 2 Certificate in Business and Enterprise (July 2019) - With a Distinction</li>
                         </ul>
                     </div>
+                    </div>
 
-                    <p>Please click on the link below to view my LinkedIn, which has further information on my
-                        experiences.
                     <ul class="icons">
                         <li><a href="https://www.linkedin.com/in/starkie-phillips-907800134/"
                                 class="icon brands fa-linkedin-in" target="_blank"><span
                                     class="label">LinkedIn</span></a>
                         </li>
                     </ul>
-                    </p>
 
                 </section>
             </div>
@@ -197,6 +221,50 @@
             <script src="./static/assets/js/breakpoints.min.js"></script>
             <script src="./static/assets/js/util.js"></script>
             <script src="./static/assets/js/main.js"></script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var tabButtons = document.querySelectorAll('.tab-btn');
+                    var tabPanels = document.querySelectorAll('.tab-panel');
+
+                    function activateTab(target, updateHash) {
+                        var matched = false;
+                        tabButtons.forEach(function (b) {
+                            var isMatch = b.getAttribute('data-target') === target;
+                            matched = matched || isMatch;
+                            b.classList.toggle('primary', isMatch);
+                            b.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+                        });
+                        if (!matched) return;
+
+                        tabPanels.forEach(function (panel) {
+                            panel.hidden = panel.getAttribute('data-panel') !== target;
+                        });
+
+                        if (updateHash) {
+                            history.replaceState(null, '', '#' + target);
+                        }
+                    }
+
+                    tabButtons.forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            activateTab(btn.getAttribute('data-target'), true);
+                        });
+                    });
+
+                    // Deep-link support: e.g. experiences#education jumps straight to that tab
+                    var initialTarget = window.location.hash.replace('#', '');
+                    if (initialTarget) {
+                        activateTab(initialTarget, false);
+                    }
+
+                    // Keep in sync if the hash changes without a full page reload (e.g. back/forward)
+                    window.addEventListener('hashchange', function () {
+                        var target = window.location.hash.replace('#', '');
+                        if (target) activateTab(target, false);
+                    });
+                });
+            </script>
 
 </body>
 

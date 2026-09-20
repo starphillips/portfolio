@@ -15,6 +15,25 @@
 	<noscript>
 		<link rel="stylesheet" href="./static/assets/css/noscript.css" />
 	</noscript>
+
+	<style>
+		/* "Additional projects" has no image half, so give it a centered, full-width layout
+		   instead of the narrow left-aligned box the spotlights image+content split leaves behind */
+		.spotlights > section.additional-projects {
+			min-height: 0;
+		}
+
+		.spotlights > section.additional-projects > .content {
+			width: 100%;
+			align-items: center;
+			text-align: center;
+			padding: 3em 5em;
+		}
+
+		.spotlights > section.additional-projects > .content > .inner {
+			max-width: 40em;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -40,87 +59,67 @@
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
 			<div class="inner">
 				<h1>Starkie Phillips Portfolio</h1>
-				<h3>Software Engineering Student</h3>
+				<h3>Junior Software Engineer and Student</h3>
 				<p>Exploring software development through university projects,<br>professional experience, and independent projects.</p>
 				<ul class="actions">
-					<li><a href="#one" class="button scrolly">Learn more</a></li>
+					<li><a href="{{ url_for('html_page', page_name='experiences') }}#experience" class="button">Experiences</a></li>
+					<li><a href="{{ url_for('html_page', page_name='experiences') }}#education" class="button">Education History</a></li>
+					<li><a href="#one" class="button scrolly">Learn More</a></li>
+                    <li><a href="https://www.linkedin.com/in/starkie-phillips-907800134/" class="button" target="_blank"> LinkedIn</a></li>
+
 				</ul>
 			</div>
 		</section>
 
 		<!-- One -->
 		<section id="one" class="wrapper style2 spotlights">
-			<!-- <section>
-				<a href="#" class="image"><img src="./static/images/map.jpg" alt="" data-position="top center" /></a>
+			<section>
+				<a href="#" class="image"><img src="./static/images/whereto/logo.png" alt="" data-position="25% 25%" /></a>
 				<div class="content">
 					<div class="inner">
-						<h2>WhereTo.io</h2>
-						<p>A first year project, using the database from Bristol Open Data to generate an app that
-							allows people in Bristol to locate and access support services local to them.</p>
+						<h2>Where To?</h2>
+						<p>Event discovery platform for Maastricht, where I led web development, and supported the wider business development with feature implementation and connecting with event organisers and venues.</p>
 						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='secondproject') }}" class="button">Learn more</a></li>
+                			<li><a href="{{ url_for('html_page', page_name='whereto2') }}" class="button">Learn more</a></li>
 						</ul>
 					</div>
 				</div>
-			</section> -->
+			</section>
 			<section>
-				<a href="#" class="image"><img src="./static/images/me.jpg" alt="" data-position="25% 25%" /></a>
+				<a href="#" class="image"><img src="./static/images/backpackers.jpg" alt="" data-position="25% 25%" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Backpacker's Guide</h2>
+						<p>A Go-powered route-planning engine that scores and recommends multi-country backpacking itineraries based on a traveller's interests, 
+							budget, and pace. <em><b>Current Project in Progress.</b></em></p>
+						<ul class="actions">
+                			<li><a href="{{ url_for('html_page', page_name='backpackersguide') }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a href="#" class="image"><img src="./static/images/portfolio.png" alt="" data-position="25% 25%" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>This Portfolio</h2>
 						<p>An overview of how I developed this portfolio, the technologies used, <br>and how my web development skills have progressed since.</p>
 						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='thirdproject') }}" class="button">Learn more</a></li>
+                			<li><a href="{{ url_for('html_page', page_name='portfolio') }}" class="button">Learn more</a></li>
 						</ul>
 					</div>
 				</div>
 			</section>
-				<section>
-				<a href="#" class="image"><img src="./static/images/map.jpg" alt="" data-position="25% 25%" /></a>
+
+			<section class="additional-projects">
 				<div class="content">
 					<div class="inner">
-						<h2>WhereTo2</h2>
-						<p>An event platform for Maastricht, where I led the software development <br>and built the website and features supporting the wider business idea.</p>
-						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='whereto') }}" class="button">Learn more</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="#" class="image"><img src="./static/images/hn.jpg" alt="" data-position="25% 25%" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Placement Experience</h2>
-						<p>A closer look at the software development and project management <br>experience I gained during my year in industry.</p>
-						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='placement') }}" class="button">Learn more</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<!-- <section>
-				<a href="#" class="image"><img src="./static/images/hn.jpg" alt="" data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Hacker News Top Stories</h2>
-						<p>An individual project that aims to extract the highest rated stories from the popular
-							website - Hacker News.
-						</p>
-						<ul class="actions">
-                			<li><a href="{{ url_for('html_page', page_name='firstproject') }}" class="button">Learn more</a></li>
-						</ul>
-					</div>
-				</div>
-			</section> -->
-			<section>
-				<div class="content">
-					<div class="inner">
-						<h2>Additional projects</h2>
-							<ul class="actions">
-								<li><a href="{{ url_for('html_page', page_name='firstproject') }}" class="button">Hacker News Top Stories</a></li>
-								<li><a href="{{ url_for('html_page', page_name='secondproject') }}" class="button">WhereTo.io</a></li>
-								<li><a href="{{ url_for('html_page', page_name='mlbooks') }}" class="button">MLBookkeepers</a></li>
+						<h2>Additional Projects</h2>
+						<p>A few smaller builds alongside the projects above.</p>
+							<ul class="actions special">
+								<li><a href="{{ url_for('html_page', page_name='hackernews') }}" class="button">Hacker News Top Stories</a></li>
+								<li><a href="{{ url_for('html_page', page_name='whereto') }}" class="button">WhereTo.io</a></li>
+								<!-- <li><a href="{{ url_for('html_page', page_name='mlbooks') }}" class="button">MLBookkeepers</a></li> -->
 							</ul>
 					</div>
 				</div>
@@ -136,45 +135,51 @@
 
 				<p>Thank you for taking the time to explore my portfolio!</p>
 
-				<p>I'm a current final year undergraduate student at the University of the West of England, pursuing a BSc in
-					Software Engineering for Business. My enthusiasm for software development has driven me to apply the
-					theory and technical knowledge I've gained in the classroom to individual projects.</p>
+				<p>I'm a final year Software Engineering for Business student at the University of the West of England, currently working part-time as a 
+					Junior Software Developer at OpusApeiro alongside my studies, having previously completed a Year in Industry at Callen-Lenz.</p>
+				
+				<p>Outside of my degree and job roles, I build full-stack projects, from Flask applications with real database design 
+					(Where To?) to a Go-powered recommendation engine with a custom scoring algorithm (Backpacker's Guide).</p>
 
-				<p>Here below are the skills that I would like to highlight. Please click on experiences to learn more
-					about my work and education history.</p>
-
-				<ul class="actions">
-                	<li><a href="{{ url_for('html_page', page_name='experiences') }}" class="button">Experiences</a></li>
-				</ul>
+				<p>Below are the technical skills I would like to highlight.</p>
 
 				<div class="features">
 
 					<section>
-						<span class="icon solid major fa-star"></span>
-						<h3>Python</h3>
-						<p>Gained a solid foundation in Python through the completion of a ZTM course in September
-							2024, now applying these skills to a personal and second-year university project.</p>
+						<span class="icon solid major fa-code"></span>
+						<h3>Go</h3>
+						<p>Used Go as my main language during my software rotations at Callen-Lenz, and now applying this independently to 
+							build a algorthim backend for Backpacker's Guide.</p>
 					</section>
 					<section>
 						<span class="icon solid major fa-link"></span>
+						<h3>Python & Flask</h3>
+						<p>Built and deployed full-stack Flask applications (this portfolio, Where To?), handling routing, 
+							templating, form processing, and database integration.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-star"></span>
+						<h3>SQL & Databases</h3>
+						<p>Worked with PostgreSQL during job roles, and independently designed a relational schema for Backpacker's Guide, and implemented a Neon database 
+							integration on Where To?.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-code-branch"></span>
+						<h3>Git</h3>
+						<p>Used Git for version control across individual projects and university group work, and continued using it professionally in my developer roles
+							including GitLab, GitHub and Azure DevOps repositories.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-file"></span>
+						<h3>HTML & CSS & JavaScript</h3>
+						<p>Built responsive, accessible page layouts across every project in this portfolio.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-object-ungroup"></span>
 						<h3>Java</h3>
-						<p>Acquired Java programming skills through a first-year project involving the
-							development of a software system, further enhancing these abilities in a second-year
-							project focused on object-oriented design.</p>
+						<p>Gained a strong foundation in object-oriented design through university coursework, particularly a second-year project focused on OOP principles,
+							building on first-year Java experience.</p>
 					</section>
-					<section>
-						<span class="icon solid major fa-code"></span>
-						<h3>JavaScript</h3>
-						<p>Developed proficiency in JavaScript through various projects at GCSE and university
-							levels. </p>
-					</section>
-					<section>
-						<span class="icon solid major fa-globe"></span>
-						<h3>HTML</h3>
-						<p>Built a confident understanding of HTML through academic and individual projects,
-							consistently used alongside CSS to create responsive web pages.</p>
-					</section>
-
 				</div>
 
 			</div>
@@ -216,7 +221,7 @@
 							</li>
 							<li>
 								<h3>Email</h3>
-								<a href="#">starkiephillips@gmail.com</a>
+								<span>starkiephillips@gmail.com</span>
 							</li>
 
 							<li>

@@ -26,9 +26,11 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ url_for('html_page', page_name='experiences') }}">Experience</a></li>
-                <li><a href="{{ url_for('html_page', page_name='firstproject') }}">Hacker News Stories</a></li>
-                <li><a href="{{ url_for('html_page', page_name='secondproject') }}">WhereTo.io</a></li>
-                <li><a href="{{ url_for('html_page', page_name='thirdproject') }}" class="active">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='portfolio') }}" class="active">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto2') }}">Where To?</a></li>
+                <li><a href="{{ url_for('html_page', page_name='backpackersguide') }}">Backpackers Guide</a></li>
+                <li><a href="{{ url_for('html_page', page_name='hackernews') }}">Hacker News Stories</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto') }}">WhereTo.io</a></li>
             </ul>
         </nav>
     </header>
@@ -39,7 +41,7 @@
         <!-- Main -->
         <section id="main" class="wrapper">
             <div class="inner">
-                <h1 class="major">This portfolio</h1>
+                <h1 class="major">This Portfolio</h1>
 
                 <p>I created this portfolio to showcase the work I've done both inside and outside of
                     university, highlighting my ability to turn ideas into software applications.</p>
@@ -67,20 +69,21 @@
                     and hope to showcase further experiences. </p>
 
                 <p> Please click on the icon to find out more about this project on GitHub.
-                <ul class="icons">
-                    <li><a href="https://github.com/starphillips/portfolio" class="icon brands fa-github"
-                            target="_blank"><span class="label">GitHub</span></a>
-                    </li>
-                </ul>
+                    <ul class="icons">
+                        <li><a href="https://github.com/starphillips/portfolio" class="icon brands fa-github"
+                                target="_blank"><span class="label">GitHub</span></a>
+                        </li>
+                    </ul>
                 </p>
+
                 <div class="job">
-                    <h2>Further Developments</h2>
+                    <h3>Further Developments</h3>
                 </div>
                 <p>Since creating this portfolio, I have created two further websites. One as a side project 
-                    for a friend's business idea, and another in updating dad's bookkeeping business!</p>
+                    for my partner's business idea, and another in updating my dad's bookkeeping business!</p>
 
-                <p> Whilst the business idea has fizzled out.. you can see MLBookkeepers new website 
-                    at this <a href="https://www.mlbookkeepers.org.uk/"> </a>address </p>
+                <p> Whilst <em>Where To?</em> is no longer operating online, you can checkout further details <a href="{{ url_for('html_page', page_name='whereto2') }}">here.</a>
+                     And you can see MLBookkeepers new website at this <a href="https://www.mlbookkeepers.org.uk/"> address.</a> </p>
 
                 <p>Both entail the same concept of maintaining organisation to my project files, working with
                     premade templates and developing new features that I have then been able to update my 

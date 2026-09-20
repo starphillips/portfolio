@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Starkie Phillips Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="./static/assets/css/main.css" />
+    <link href="./static/python.ico" rel="icon">
+    <noscript>
+        <link rel="stylesheet" href="./static/assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+        /* Photo gallery thumbnails */
+        #image-slider .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        #image-slider .swiper {
+            padding-bottom: 2.5rem;
+        }
+
+        /* Tighten the gaps around the Photo Gallery section */
+        #main:has(+ #image-slider) > .inner {
+            padding-bottom: 1.5em;
+        }
+
+        #image-slider > .inner {
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+        }
+
+        #image-slider + section > .inner {
+            padding-top: 1.5em;
+        }
+
+        /* Lightbox: contained, not fullscreen, with a visible backdrop to click out on */
+        .gallery-modal-dialog {
+            max-width: min(90vw, 1000px);
+        }
+
+        .gallery-modal-dialog .modal-content {
+            position: relative;
+        }
+
+        .gallery-modal-dialog .carousel-item img {
+            display: block;
+            max-height: 80vh;
+            max-width: 100%;
+            width: auto;
+            margin: 0 auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            background-size: 14px;
+        }
+
+        .gallery-modal-dialog .carousel-control-prev,
+        .gallery-modal-dialog .carousel-control-next {
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            opacity: 1;
+        }
+
+        .gallery-modal-dialog .carousel-control-prev {
+            left: 10px;
+        }
+
+        .gallery-modal-dialog .carousel-control-next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="/" class="title">Starkie Phillips</a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('html_page', page_name='experiences') }}">Experience</a></li>
+                <li><a href="{{ url_for('html_page', page_name='portfolio') }}">This Portfolio</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto2') }}"class="active"></a> Where To?</a></li>
+                <li><a href="{{ url_for('html_page', page_name='backpackersguide') }}" >Backpackers Guide</a></li>
+                <li><a href="{{ url_for('html_page', page_name='hackernews') }}">Hacker News Stories</a></li>
+                <li><a href="{{ url_for('html_page', page_name='whereto') }}">WhereTo.io</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Where To?</h1>
+
+                <p>Where To? was a web platform and business idea created to make events in Maastricht, Netherlands, easier to discover. The goal was to connect university students, 
+                    local residents, event organisers, and venues through one central hub.</p>
+
+                <p>I worked alongside my partner to plan the concept, shape the platform’s features, contact event organisers and venues, and help run the project. 
+                    We wanted to create more than an event listing website: we wanted to build a community around Maastricht’s events and give organisers a dedicated 
+                    space to promote their work.</p>
+
+                <div class="job">
+                    <h3>Key Features</h3>
+                </div>
+
+                <ul>
+                    <li>Homepage highlighting upcoming events and local activities.</li>
+                    <li>Event directory with categories including House, Techno, Pop, R&B, and other events.</li>
+                    <li>Dedicated event pages with descriptions, dates, images, organiser information, social links, tags, and galleries.</li>
+                    <li>Organiser and venue directory to help users discover the people and places behind Maastricht’s events.</li>
+                    <li>Dedicated profile pages for event organisers, giving them space to tell their story and promote their brand.</li>
+                    <li>Threaded comment sections where visitors could share thoughts, connect with others, and reply to existing comments.</li>
+                    <li>Optional social media links attached to user comments.</li>
+                    <li>Contact form for users and event organisers to get in touch with the team.</li>
+                    <li>Responsive layout designed for both desktop and mobile users.</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section id="image-slider" class="wrapper">
+            <div class="inner">
+                <div class="job">
+                    <h3>Photo Gallery</h3>
+                </div>
+                    <p>View snippets of the Where To? website here</p>
+                    <div class="container" data-aos="fade-up" data-aos-delay="100">
+                      <div class="swiper init-swiper image-swiper">
+                        <script type="application/json" class="swiper-config">
+                          {
+                            "loop": true,
+                            "speed": 600,
+                            "autoplay": { "delay": 3000 },
+                            "slidesPerView": 1,
+                            "spaceBetween": 24,
+                            "breakpoints": {
+                              "768": { "slidesPerView": 2, "spaceBetween": 24 },
+                              "1200": { "slidesPerView": 3, "spaceBetween": 24 }
+                            },
+                            "pagination": { "el": ".swiper-pagination", "clickable": true }
+                          }
+                        </script>
+
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-2.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-3.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-1.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-4.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-5.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-6.png" alt=""></div>
+                          <div class="swiper-slide"><img src="./static/images/whereto/whereto-7.png" alt=""></div>
+
+
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+            </div>
+        </section>
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <div class="job">
+                    <h3>My Contribution</h3>
+                </div>
+                <p>I contributed to the planning, design, development, and business side of the project. This included discussing the platform’s purpose and features, 
+                    building and adapting website pages, creating the event and organiser experiences, developing the comment functionality, and reaching out to event 
+                    organisers and venues. </p>
+                
+                <p>Because I was based in Bristol while my partner was connected to Maastricht, keeping the event listings continuously updated became increasingly difficult. 
+                    When my friend later left the university, maintaining relationships with local organisers and keeping the platform current became impractical, 
+                    so the project was eventually discontinued. However, it gave me valuable experience in full-stack development, product planning, stakeholder communication, 
+                    community-focused design, and working on a real business idea from concept to launch.</p>
+                
+                <div class="job">
+                    <h3>Technologies Used</h3>
+                </div>
+                <ul>
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>Jinja2</li>
+                    <li>SQLAlchemy and Flask-SQLAlchemy</li>
+                    <li>Neon PostgreSQL</li>
+                    <li>HTML, CSS, and JavaScript</li>
+                    <li>Bootstrap 5 and Bootstrap Icons</li>
+                    <li>AOS for scroll animations</li>
+                    <li>Isotope for event filtering</li>
+                    <li>Swiper for image galleries</li>
+                    <li>GLightbox for image viewing</li>
+                    <li>CSV storage for contact submissions</li>
+                    <li>Git and GitHub</li>
+                </ul>
+
+                <p> Please click on the icon to find out more about this project on GitHub and its usage.
+                <ul class="icons">
+                    <li><a href="https://github.com/starphillips/wheretoupload" class="icon brands fa-github"
+                            target="_blank"><span class="label">GitHub</span></a>
+                    </li>
+                </ul>
+                </p>
+
+            </div>
+        </section>
+
+        
+
+                  <!-- Place the modal OUTSIDE the slider/section -->
+                  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered gallery-modal-dialog">
+                      <div class="modal-content bg-transparent border-0">
+                        <button type="button" class="btn-close btn-close-white gallery-close"
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <div class="modal-body p-0 d-flex align-items-center justify-content-center">
+                          <div id="galleryCarousel" class="carousel slide w-100" data-bs-interval="false">
+                            <div class="carousel-inner"><!-- populated by JS --></div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li><a href="{{ url_for('html_page', page_name='privacy') }}">Privacy Policy </a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./static/assets/js/jquery.min.js"></script>
+    <script src="./static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="./static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="./static/assets/js/browser.min.js"></script>
+    <script src="./static/assets/js/breakpoints.min.js"></script>
+    <script src="./static/assets/js/util.js"></script>
+    <script src="./static/assets/js/main.js"></script>
+
+    <!-- Photo gallery (Swiper + Bootstrap modal + AOS) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AOS) AOS.init();
+
+            // Auto-init every ".init-swiper" using its embedded JSON config
+            document.querySelectorAll('.init-swiper').forEach(function (el) {
+                var configEl = el.querySelector('.swiper-config');
+                var config = configEl ? JSON.parse(configEl.textContent) : {};
+                new Swiper(el, config);
+            });
+
+            // Build the fullscreen lightbox carousel from the gallery images
+            var slideImages = Array.from(document.querySelectorAll('#image-slider .swiper-slide img'));
+            var carouselEl = document.getElementById('galleryCarousel');
+            var carouselInner = carouselEl.querySelector('.carousel-inner');
+
+            carouselInner.innerHTML = slideImages.map(function (img, i) {
+                return '<div class="carousel-item' + (i === 0 ? ' active' : '') + '">' +
+                    '<img src="' + img.getAttribute('src') + '" class="d-block w-100" alt="">' +
+                    '</div>';
+            }).join('');
+
+            var carousel = new bootstrap.Carousel(carouselEl, { interval: false });
+            var galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+
+            slideImages.forEach(function (img, i) {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', function () {
+                    carousel.to(i);
+                    galleryModal.show();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
