@@ -4049,6 +4049,7 @@ body.is-preload #sidebar nav ul li {
 	border-bottom: 1px solid #ddd;
 	display: flex;
 	justify-content: space-between;
+	gap: 1em;
 }
 
 .job h3 span {
@@ -4059,6 +4060,26 @@ body.is-preload #sidebar nav ul li {
 .job h3 em {
 	font-style: italic;
 	color: rgba(255, 255, 255, 0.55);
+}
+
+@media screen and (max-width: 736px) {
+
+	.job h3 {
+		font-size: 1em;
+		line-height: 1.4;
+		flex-direction: column;
+		gap: 0.2em;
+	}
+
+	.job h3 span {
+		font-size: 0.9em;
+	}
+
+	.job h3 em {
+		font-size: 0.8em;
+		font-weight: normal;
+	}
+
 }
 
 .job ul {
