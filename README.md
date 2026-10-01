@@ -13,3 +13,6 @@ Thank you for taking the time to look at my repository and explore my portfolio.
 - Restructured the experience page into a tabbed layout, divided by Experiences, Education and Qualifications.
 - Updated the portfolio with some of my current projects and further details.
 
+**[01/10/2026]**
+- Additional design fixes for phone view
+
